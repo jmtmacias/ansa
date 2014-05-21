@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset="UTF-8" /> 
+    <title>
+        Bienvenidos 
+    </title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+</head>
+<body>
+
+<div id="wrapper">
+{% block content %}
+	<form name="login-form" class="login-form" action="/login/" method="post">{% csrf_token %}
+			<div class="header">
+		<h1><img src="../static/img/secure-payment.png" alt=""></h1>
+		{% if message %}
+		<span style="color: red; font-weight: bold">{{ message }} </span>
+		{% else %}
+			<span > Para poder ingresar al sistema por favor ingrese sus datos </span>
+		{% endif %}
+		</div>
+	
+		
+		<div class="content">
+		<input name="username" type="text" class="input username" placeholder="Usuario" />
+		<div class="user-icon"></div>
+		<input name="password" type="password" class="input password" placeholder="Contraseña" />
+		<div class="pass-icon"></div>	
+		<input type="hidden" value="{{next}}" name="next" >
+		</div>
+		
+		
+		<div class="footer">
+		<input type="submit" name="submit" value="Entrar" class="button" />
+		
+		</div>
+	
+	</form>
+{% endblock %}
+</div>
+<div class="gradient"></div>
+
+
+</body>
+</html>
