@@ -1,0 +1,23 @@
+    
+{% extends "base.html" %}
+{% block titulo%} Listado de usuarios {% endblock%}
+{% block titulodash%} Listado de usuarios {% endblock%}</li>
+
+{% block content %}
+
+{% for dato in usuarios %}
+	{{ dato.id }}</br>
+    {{ dato.username }}</br>
+    {{ dato.password }}</br>
+    {{ dato.first_name }}</br>
+    {{ dato.last_name }}</br>
+    {{ dato.email }}<br>
+    {{ dato.is_active }}<br>
+    {{ dato.is_staff }}<br>
+    {{ dato.is_superuser}}<br>
+
+</br>
+<br>
+{% endfor %}
+
+{% endblock %}

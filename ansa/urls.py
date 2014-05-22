@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^home/$','usuarios.views.home',name='home'),
     url(r'^logout/$','usuarios.views.cerrar_sesion',name='logout'),
     url(r'^usuarios/newuser/$','usuarios.views.newuser',name='newuser'),
+    url(r'^usuarios/listuser/$', 'usuarios.views.listar_usuarios', name='listuser')
 )
