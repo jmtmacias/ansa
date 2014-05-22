@@ -44,7 +44,11 @@ def login_page(request):
 	return render_to_response('usuarios/login.html',{'formulario':formulario},context_instance = RequestContext(request))
 
 def listar_usuarios( request ):
+<<<<<<< HEAD
 	usuarios = User.objects.all();
+=======
+	usuarios = User.objects.all().order_by('last_name')
+>>>>>>> Lista de Usuarios
 	return render_to_response('usuarios/list_user.html',{'usuarios':usuarios}, context_instance = RequestContext(request))
 
 
