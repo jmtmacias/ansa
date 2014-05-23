@@ -1,0 +1,15 @@
+
+{% block titulo%} Registro de usuario{% endblock%}
+{% block titulodash%} Registro de usuario {% endblock%}</li>
+
+{% block content %}
+<form action="/usuarios/useredit/" method="POST">
+	{% csrf_token %}
+{{ formulario.as_p}}
+</form>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}
