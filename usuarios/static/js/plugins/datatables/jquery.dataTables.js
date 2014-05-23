@@ -2711,14 +2711,14 @@
 			 * sZeroRecords - assuming that is given.
 			 */
 			if ( !oLanguage.sEmptyTable && oLanguage.sZeroRecords &&
-				oDefaults.sEmptyTable === "No data available in table" )
+				oDefaults.sEmptyTable === "No hay datos disponibles en la tabla" )
 			{
 				_fnMap( oLanguage, oLanguage, 'sZeroRecords', 'sEmptyTable' );
 			}
 		
 			/* Likewise with loading records */
 			if ( !oLanguage.sLoadingRecords && oLanguage.sZeroRecords &&
-				oDefaults.sLoadingRecords === "Loading..." )
+				oDefaults.sLoadingRecords === "Cargando..." )
 			{
 				_fnMap( oLanguage, oLanguage, 'sZeroRecords', 'sLoadingRecords' );
 			}
@@ -3405,14 +3405,14 @@
 				/* And give the user a warning that we've stopped the table getting too small */
 				if ( o.oScroll.sX === "" )
 				{
-					_fnLog( o, 1, "The table cannot fit into the current element which will cause column"+
-						" misalignment. The table has been drawn at its minimum possible width." );
+					_fnLog( o, 1, "La tabla no puede encajar en el elemento actual que hará que la columna"+
+						"Desalineación. La tabla se ha elaborado en su anchura mínima posible." );
 				}
 				else if ( o.oScroll.sXInner !== "" )
 				{
-					_fnLog( o, 1, "The table cannot fit into the current element which will cause column"+
-						" misalignment. Increase the sScrollXInner value or remove it to allow automatic"+
-						" calculation" );
+					_fnLog( o, 1, "La tabla no puede encajar en el elemento actual que hará que la columna"+
+						"se desalinie. Aumente el valor sScrollXInner o eliminarlo para permitir el cálculo"+
+						" automático" );
 				}
 			}
 			else
@@ -5050,7 +5050,7 @@
 			}
 			else
 			{
-				_fnLog( oSettings, 1, "Unknown selection options" );
+				_fnLog( oSettings, 1, "Opciones de selección desconocida" );
 			}
 		
 			/* We need to filter on the TR elements and also 'find' in their descendants
@@ -6373,8 +6373,8 @@
 			/* Sanity check */
 			if ( this.nodeName.toLowerCase() != 'table' )
 			{
-				_fnLog( null, 0, "Attempted to initialise DataTables on a node which is not a "+
-					"table: "+this.nodeName );
+				_fnLog( null, 0, "Intento de inicializar tablas de datos en un nodo que no es un "+
+					"tabla: "+this.nodeName );
 				return;
 			}
 			
@@ -6395,9 +6395,9 @@
 					}
 					else
 					{
-						_fnLog( DataTable.settings[i], 0, "Cannot reinitialise DataTable.\n\n"+
-							"To retrieve the DataTables object for this table, pass no arguments or see "+
-							"the docs for bRetrieve and bDestroy" );
+						_fnLog( DataTable.settings[i], 0, "No se puede reinicializar DataTable.\n\n"+
+							"Para recuperar las tablas de datos objeto de esta tabla, pasar sin argumentos o consulte "+
+							"La documetación para los metodos bRetrieve y bDestroy" );
 						return;
 					}
 				}
@@ -8753,8 +8753,8 @@
 				"type": oSettings.sServerMethod,
 				"error": function (xhr, error, thrown) {
 					if ( error == "parsererror" ) {
-						oSettings.oApi._fnLog( oSettings, 0, "DataTables warning: JSON data from "+
-							"server could not be parsed. This is caused by a JSON formatting error." );
+						oSettings.oApi._fnLog( oSettings, 0, "DataTables advertencia: datos JSON desde "+
+							"un servidor No se pudieron analizar. Esto es causado por un error de formato JSON." );
 					}
 				}
 			} );
@@ -9134,7 +9134,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sSortAscending": ": activate to sort column ascending",
+				"sSortAscending": ": activar para ordenar la columna de forma ascendente",
 	
 				/**
 				 * ARIA label that is added to the table headers when the column may be
@@ -9155,7 +9155,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sSortDescending": ": activate to sort column descending"
+				"sSortDescending": ": activar para ordenar de forma descendente la columna"
 			},
 	
 			/**
@@ -9182,7 +9182,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "Primero",
 			
 			
 				/**
@@ -9203,7 +9203,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "último",
 			
 			
 				/**
@@ -9224,7 +9224,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Siguiente",
 			
 			
 				/**
@@ -9245,7 +9245,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Previo"
 			},
 		
 			/**
@@ -9266,7 +9266,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "No hay datos disponibles en la tabla",
 		
 		
 			/**
@@ -9287,7 +9287,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "_START_ de _END_, Total de registros: _TOTAL_",
 		
 		
 			/**
@@ -9306,7 +9306,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0-0 de 0 registros",
 		
 		
 			/**
@@ -9326,7 +9326,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
 		
 		
 			/**
@@ -9407,7 +9407,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrar resgistros _MENU_",
 		
 		
 			/**
@@ -9429,7 +9429,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Loading...",
+			"sLoadingRecords": "Cargando...",
 		
 		
 			/**
@@ -9448,7 +9448,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "Procesando...",
 		
 		
 			/**
@@ -9481,7 +9481,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Buscar:",
 		
 		
 			/**
@@ -9524,7 +9524,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "No hay registros coincidentes encontrados"
 		},
 	
 	

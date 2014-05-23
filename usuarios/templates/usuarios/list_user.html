@@ -5,59 +5,49 @@
 {% block titulodash%} Listado de usuarios {% endblock%}</li>
 
 {% block content %}
-<div class="row">
-	<div class="col-xs-12">
-		<div class="box">
 
-			<div class="box-header">
-				<h3 class="box-title">Responsive Hover Table</h3>
-					<div class="box-tools">
-						<div class="input-group">
-							<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
-								<div class="input-group-btn">
-									<button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-								</div>
-						</div>
-					</div>
-			</div><!-- /.box-header -->
-                                
-			<div class="box-body table-responsive no-padding">
-				<table class="table table-hover">
-					<tbody>
-						<tr>
-							<th>ID</th>
-							<th>Login</th>
-							<th>Nombre</th>
-							<th>Fecha de Alta</th>
-							<th>Status</th>
-							<th>Email</th>
-							<th>Acciones</th>
-						</tr>
-						{% for datos in usuarios %}
-						<tr>
-							<td>{{ datos.id }}</td>
-							<td>{{ datos.username }}</td>
-							<td>{{ datos.first_name }} {{ datos.last_name }}</td>
-							<td>{{ datos.date_joined | date:"M d, Y" }}</td>
-							{% if  datos.is_active  %}
-								<td><span class="label label-success">Activo</span></td>
-							{% else %}
-								<td><span class="label label-danger">Inactivo</span></td>
-							{% endif %}
-							<td>{{ datos.email}}</td>
-							<td>
-								<button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span> Editar</button> 
-								<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-edit"></span> Editar</button> 
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-			    </table>
-			</div><!-- /.box-body -->
-		</div><!-- /.box -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header">
+					<h3 class="box-title">Usuarios</h3>                                    
+				</div><!-- /.box-header -->
+				<div class="box-body table-responsive">
+					<table id="example1" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Login</th>
+								<th>Nombre</th>
+								<th>Fecha de Alta</th>
+								<th>Status</th>
+								<th>Email</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for datos in usuarios %}
+							<tr>
+								<td>{{ datos.id }}</td>
+								<td>{{ datos.username }}</td>
+								<td>{{ datos.first_name }} {{ datos.last_name}}</td>
+								<td>{{ datos.date_joined | date:"M d, Y"}}</td>
+								<td align="center">{% if  datos.is_active  %}<span class="label label-success">Activo</span>{% else %}<span class="label label-danger">Inactivo</span>{% endif %}</td>
+								<td>{{ datos.email }}</td>
+								<td align="center">
+									<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Editar</button> 
+									<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Eliminar</button> 
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div> <!-- end box-body -->
+			</div> <!-- end box-->
+		</div> <!-- end col-xs-12-->
 	</div>
-</div>
-
+</section>
 {% endblock %}
 
 
