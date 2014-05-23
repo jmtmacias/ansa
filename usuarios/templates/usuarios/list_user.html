@@ -1,33 +1,10 @@
     
 {% extends "base.html" %}
 {% block titulo%} Listado de usuarios {% endblock%}
-<<<<<<< HEAD
-=======
-
 {% block style_css %} <link href="{{STATIC_URL}}css/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />{% endblock %}
-
->>>>>>> Lista de Usuarios
 {% block titulodash%} Listado de usuarios {% endblock%}</li>
 
 {% block content %}
-
-<<<<<<< HEAD
-{% for dato in usuarios %}
-	{{ dato.id }}</br>
-    {{ dato.username }}</br>
-    {{ dato.password }}</br>
-    {{ dato.first_name }}</br>
-    {{ dato.last_name }}</br>
-    {{ dato.email }}<br>
-    {{ dato.is_active }}<br>
-    {{ dato.is_staff }}<br>
-    {{ dato.is_superuser}}<br>
-
-</br>
-<br>
-{% endfor %}
-
-=======
 <div class="row">
 	<div class="col-xs-12">
 		<div class="box">
@@ -70,8 +47,7 @@
 							<td>{{ datos.email}}</td>
 							<td>
 								<button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span> Editar</button> 
-								<input type="submit" value="Editar"> 
-								<input type="submit" value="Editar"> 
+								<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-edit"></span> Editar</button> 
 							</td>
 						</tr>
 						{% endfor %}
@@ -105,5 +81,4 @@
                 });
             });
         </script>
->>>>>>> Lista de Usuarios
 {% endblock %}
