@@ -35,9 +35,9 @@
 								<td>{{ datos.date_joined | date:"M d, Y"}}</td>
 								<td align="center">{% if  datos.is_active  %}<span class="label label-success">Activo</span>{% else %}<span class="label label-danger">Inactivo</span>{% endif %}</td>
 								<td>{{ datos.email }}</td>
-								<td align="center">
-									<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Editar</button> 
-									<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Eliminar</button> 
+								<td align="">
+									<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span></button> 
+									<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button> 
 								</td>
 							</tr>
 							{% endfor %}
