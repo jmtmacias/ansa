@@ -14,6 +14,6 @@ urlpatterns = patterns('',
     url(r'^logout/$','usuarios.views.cerrar_sesion',name='logout'),
     url(r'^usuarios/newuser/$','usuarios.views.newuser',name='newuser'),
     url(r'^usuarios/listuser/$', 'usuarios.views.listar_usuarios', name='listuser'),
-    url(r'^usuarios/edituser/', 'usuarios.views.edit_user', name="edituser"),
+    url(r'^usuarios/edituser/(?P<id>\d+)', 'usuarios.views.edituser', name="edituser"),
 
     )

@@ -40,8 +40,8 @@
 								<td align="center">{% if  datos.is_active  %}<span class="label label-success">Activo</span>{% else %}<span class="label label-danger">Inactivo</span>{% endif %}</td>
 								<td>{{ datos.email }}</td>
 								<td align="">
-									<button data-id="{{datos.id}}" class="btn btn-primary btn-sm editar"><span class="glyphicon glyphicon-edit"></span></button> 
-									<button data-id="{{datos.id}}" type="submit" class="btn btn-danger btn-sm eliminar"><span class="glyphicon glyphicon-trash"></span></button> 
+									<a href="/usuarios/edituser/{{datos.id}}" class="btn btn-primary btn-sm editar"><span class="glyphicon glyphicon-edit"></span></a> 
+									<a href="/usuarios/edituser/{{datos.id}}" type="submit" class="btn btn-danger btn-sm eliminar"><span class="glyphicon glyphicon-trash"></a></button> 
 								</td>
 								</form>
 							</tr>

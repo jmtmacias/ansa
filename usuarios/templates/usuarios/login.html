@@ -5,7 +5,7 @@
     <title>
         Bienvenidos 
     </title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" />
 </head>
 <body>
 
@@ -13,7 +13,7 @@
 {% block content %}
 	<form name="login-form" class="login-form" action="/login/" method="post">{% csrf_token %}
 			<div class="header">
-		<h1><img src="../static/img/secure-payment.png" alt=""></h1>
+		<h1><img src="{{STATIC_URL}}img/secure-payment.png" alt=""></h1>
 		{% if message %}
 		<span style="color: red; font-weight: bold">{{ message }} </span>
 		{% else %}

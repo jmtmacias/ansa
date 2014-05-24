@@ -2,7 +2,7 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
-from usuarios.forms import UserCreateForm
+from usuarios.forms import UserCreateForm, UserEditForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User
@@ -17,8 +17,10 @@ def newuser(request):
 	if request.method == 'POST':
 		formulario = UserCreateForm(request.POST)
 		if formulario.is_valid:
+			message1 = "Usuario registrado correctamente"
 			formulario.save()
-			return HttpResponseRedirect('usuarios/new_user.html')
+			formulario = UserCreateForm();
+			return render_to_response('usuarios/new_user.html',{'formulario':formulario,'message1':message1},context_instance = RequestContext(request))
 	else:
 		formulario = UserCreateForm();
 		return render_to_response('usuarios/new_user.html',{'formulario':formulario},context_instance = RequestContext(request))
@@ -56,9 +58,9 @@ def home(request):
 	return render_to_response('home.html',context_instance=RequestContext(request))
 
 @login_required
-def edit_user(request):
+def edituser(request,id):
    # This body will only run if the user is logged in
    # and the current logged in user will be in request.user
-
-   formulario = UserChangeForm(instance=request.user,)
-   return render_to_response('usuarios/user_edit.html',{'formulario':formulario},context_instance=RequestContext(request))
+   Usuario = User.objects.get(id=id)
+   formulario = UserEditForm(instance=request.user,)
+   return render_to_response('usuarios/user_edit.html',{'formulario':formulario,'Usuario':Usuario},context_instance=RequestContext(request))
