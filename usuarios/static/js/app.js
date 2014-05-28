@@ -9,9 +9,17 @@ $(document).ready(function(){ //cuando el html fue cargado iniciar
         params={};
         params.id=id;
         params.action="editClient";
+        
 
+        $("#result").animate({ height: "60px",}, 400 );
         $( "#result" ).load( "/usuarios/edituser/"+ id +"/");
-
+        
     })
 
+    $('#close').on('click',function(){
+        $("#result").html('').animate({height:'1px'}, 400);
+        
+
+    });
+    
 });

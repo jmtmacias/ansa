@@ -1,20 +1,22 @@
 
-{% block titulo%} Registro de usuario{% endblock%}
-{% block titulodash%} Registro de usuario {% endblock%}</li>
+{% block titulo%} Editar Usuario{% endblock%}
+
 
 {% block content %}
 <form action="/usuarios/useredit/" method="POST">
 	{% csrf_token %}
-{{ formulario.as_p}}
+
 </form>
 {% endblock %}
 
+<input type="text" name="username" value="{{Usuario.username}}"> 
+<input type="text" name="username" value="{{Usuario.first_name}}"> 
+<input type="text" name="username" value="{{Usuario.last_name}}"> 
+<input type="text" name="username" value="{{Usuario.email}}"> 
+<input type="checkbox" name="is_active" checked="{{ Usuario.is_active }}">
 
-{{Usuario.username}}
-{{Usuario.first_name}} {{Usuario.last_name}}
-{{Usuario.email}}
-{{Usuario.is_active}}
-
+<a href="#" id="close"type="submit" class="btn btn-danger btn-sm">
+	<span class="glyphicon glyphicon-remove-circle"> Cancelar</a>
 {% block scripts %}
-
+<script src="{{STATIC_URL}}js/app.js" type="text/javascript"></script>
 {% endblock %}

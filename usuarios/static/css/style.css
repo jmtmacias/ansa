@@ -315,3 +315,11 @@ FOOTER
 	position: relative;
 	bottom: -1px;
 }
+
+
+#result{
+	background: #000;
+	height: 0px;
+	width: 100%;
+	transition: all 0.5s ease;
+}

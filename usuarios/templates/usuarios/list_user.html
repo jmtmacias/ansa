@@ -5,8 +5,9 @@
 {% block titulodash%} Listado de usuarios {% endblock%}</li>
 
 {% block content %}
-<div id="result">
-	aqui merengues
+
+<div id="result" class="result" heigth="0">
+	
 </div>
 
 	<div class="row">
@@ -40,7 +41,7 @@
 								<td align="center">{% if  datos.is_active  %}<span class="label label-success">Activo</span>{% else %}<span class="label label-danger">Inactivo</span>{% endif %}</td>
 								<td>{{ datos.email }}</td>
 								<td align="">
-									<a href="/usuarios/edituser/{{datos.id}}" class="btn btn-primary btn-sm editar"><span class="glyphicon glyphicon-edit"></span></a> 
+									<a href="#" data-id="{{ datos.id}}" class="btn btn-primary btn-sm editar"><span class="glyphicon glyphicon-edit"></span></a> 
 									<a href="/usuarios/edituser/{{datos.id}}" type="submit" class="btn btn-danger btn-sm eliminar"><span class="glyphicon glyphicon-trash"></a></button> 
 								</td>
 								</form>
@@ -76,6 +77,9 @@
                     "bAutoWidth": false
                 });
 
+                {% block scriptsec %}
+
+                {% endblock %}
                 
             });
         </script>
